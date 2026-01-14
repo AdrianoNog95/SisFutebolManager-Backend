@@ -36,7 +36,7 @@ public class Jogador1Controller {
     
     
     @PutMapping("/update/{idJogador1}")
-    public ResponseEntity<String> update(@RequestBody Jogador1 jogador1, @PathVariable long idJogador1) {
+    public ResponseEntity<String> update(@RequestBody Jogador1 jogador1, @PathVariable Integer idJogador1) {
         try {
             String mensagem = this.jogador1Service.update(idJogador1, jogador1);
             return new ResponseEntity<String>(mensagem, HttpStatus.OK);
@@ -58,7 +58,7 @@ public class Jogador1Controller {
     
     
     @GetMapping("/findById/{idJogador1}")
-    public ResponseEntity<Jogador1> findById(@PathVariable long idJogador1) { 
+    public ResponseEntity<Jogador1> findById(@PathVariable Integer idJogador1) { 
         try {
             Jogador1 jogador1 = this.jogador1Service.findById(idJogador1);
             return new ResponseEntity<>(jogador1, HttpStatus.OK);
@@ -69,7 +69,7 @@ public class Jogador1Controller {
     
        
     @DeleteMapping("/delete/{idJogador1}")
-    public ResponseEntity<String> delete (@PathVariable long idJogador1) {
+    public ResponseEntity<String> delete (@PathVariable Integer idJogador1) {
         try {
             String mensagem = this.jogador1Service.delete(idJogador1);
             return new ResponseEntity<>(mensagem, HttpStatus.OK);

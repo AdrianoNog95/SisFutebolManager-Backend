@@ -19,7 +19,7 @@ public class Jogador1Service {
     }
     
     
-    public String update(long idJogador1, Jogador1 jogador1) {
+    public String update(Integer idJogador1, Jogador1 jogador1) {
         jogador1.setIdJogador1(idJogador1);
         this.jogador1Repository.save(jogador1);        
         return jogador1.getNome()+ " atualizado com sucesso!";
@@ -31,13 +31,13 @@ public class Jogador1Service {
     }
     
     
-    public Jogador1 findById(long idJogador1) {
+    public Jogador1 findById(Integer idJogador1) {
         Jogador1 jogador1 = this.jogador1Repository.findById(idJogador1).get();
         return jogador1;
     }
     
         
-    public String delete(long idJogador1) {
+    public String delete(Integer idJogador1) {
         this.jogador1Repository.deleteById(idJogador1);        
         return " deletado com sucesso!";
     }    

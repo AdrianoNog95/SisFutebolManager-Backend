@@ -36,7 +36,7 @@ public class RankingController {
     
     
     @PutMapping("/update/{idPontuacao}")
-    public ResponseEntity<String> update(@RequestBody Ranking ranking, @PathVariable long idPontuacao) {
+    public ResponseEntity<String> update(@RequestBody Ranking ranking, @PathVariable Integer idPontuacao) {
         try {
             String mensagem = this.rankingService.update(idPontuacao, ranking);
             return new ResponseEntity<String>(mensagem, HttpStatus.OK);
@@ -58,7 +58,7 @@ public class RankingController {
     
     
     @GetMapping("/findById/{idPontuacao}")
-    public ResponseEntity<Ranking> findById(@PathVariable long idPontuacao) { 
+    public ResponseEntity<Ranking> findById(@PathVariable Integer idPontuacao) { 
         try {
             Ranking ranking = this.rankingService.findById(idPontuacao);
             return new ResponseEntity<>(ranking, HttpStatus.OK);
@@ -69,7 +69,7 @@ public class RankingController {
     
        
     @DeleteMapping("/delete/{idPontuacao}")
-    public ResponseEntity<String> delete (@PathVariable long idPontuacao) {
+    public ResponseEntity<String> delete (@PathVariable Integer idPontuacao) {
         try {
             String mensagem = this.rankingService.delete(idPontuacao);
             return new ResponseEntity<>(mensagem, HttpStatus.OK);

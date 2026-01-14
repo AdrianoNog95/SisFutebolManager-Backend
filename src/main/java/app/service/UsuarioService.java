@@ -19,7 +19,7 @@ public class UsuarioService {
     }
     
     
-    public String update(long id, Usuario usuario) {
+    public String update(Integer id, Usuario usuario) {
         usuario.setId(id);
         this.usuarioRepository.save(usuario);        
         return "Dados atualizados com sucesso!";
@@ -31,13 +31,13 @@ public class UsuarioService {
     }
     
     
-    public Usuario findById(long id) {
+    public Usuario findById(Integer id) {
         Usuario usuario = this.usuarioRepository.findById(id).get();
         return usuario;
     }
     
         
-    public String delete(long id) {
+    public String delete(Integer id) {
         this.usuarioRepository.deleteById(id);        
         return "Dados deletados com sucesso!";
     }    

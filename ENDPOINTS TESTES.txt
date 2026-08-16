@@ -2,14 +2,11 @@ http://localhost:8080/api/jogador1/save
 {
     "nome": "David Beckham",
     "dataNascimento": "02/05/1975",
-    "nacionalidade": "Inglaterra",
-    "altura": 1.83,
-    "pesoKg": 78,
+    "pais": "Inglaterra",
     "posicao": "meio-campo",
-    "conhecidoComo": "Beckham",
     "numeroUniforme": 23,
     "overall": 86,
-    "fotoJogador1": ""
+    "fotoJogador1": null
 }
 
 
@@ -22,8 +19,7 @@ http://localhost:8080/api/ranking/save
     "dataPontuacao": "13/12/2025",
     //o usuario é o campo Many To One
     "usuario": {
-        "nomeUsuario": "ADNOGUEIRA" 
-
+       "id":1
     }
 
 }

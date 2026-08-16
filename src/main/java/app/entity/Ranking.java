@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 
 @AllArgsConstructor
@@ -34,6 +35,7 @@ public class Ranking {
     //Um Palpite de pontuação só pertence a 1 usuário
     //e um usuário pode ter vários palpites de pontuação.
     @ManyToOne //cascade = ALL em ManyToOne → armadilha clássica
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
     

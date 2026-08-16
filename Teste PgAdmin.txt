@@ -1,0 +1,8 @@
+SELECT * FROM jogador1 ORDER BY id_jogador1;
+SELECT * FROM ranking;
+SELECT * FROM time;
+SELECT * FROM usuario;
+
+
+
+

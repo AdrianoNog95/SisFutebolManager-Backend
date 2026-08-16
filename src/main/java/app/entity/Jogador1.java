@@ -12,8 +12,6 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import jakarta.validation.constraints.PastOrPresent;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Lob;
-
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,8 +28,8 @@ public class Jogador1 {
     @Column(length = 40)
     private String nome;
     
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @PastOrPresent // Garante que a data não seja no futuro 
-    @JsonFormat(pattern = "dd/MM/yyyy") // Formata a data na saída JSON 
     // Melhor prática em Java é Camel Case, como está abaixo.
     private LocalDate dataNascimento;
        
@@ -39,14 +37,14 @@ public class Jogador1 {
     private String pais;
     
     @Column(length = 30)
-    private String posicao; //goleiro , zagueiro.. etc..
+    private String posicao;
     
     private Integer numeroUniforme;
     
     private Integer overall;
     
-    @Lob 
-    private byte[] fotoJogador1;
+    @Column(columnDefinition = "TEXT")
+    private String fotoJogador1; 
 
 	
     
@@ -109,13 +107,15 @@ public class Jogador1 {
 		this.overall = overall;
 	}
 
-	public byte[] getFotoJogador1() {
-		return fotoJogador1;
+	public String getFotoJogador1() {
+	    return fotoJogador1;
 	}
 
-	public void setFotoJogador1(byte[] fotoJogador1) {
-		this.fotoJogador1 = fotoJogador1;
+	public void setFotoJogador1(String fotoJogador1) {
+	    this.fotoJogador1 = fotoJogador1;
 	}
+
+	
     
     
     

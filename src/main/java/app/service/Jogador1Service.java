@@ -40,7 +40,11 @@ public class Jogador1Service {
     public String delete(Integer idJogador1) {
         this.jogador1Repository.deleteById(idJogador1);        
         return " deletado com sucesso!";
-    }    
+    }
+    
+    public List<Jogador1> findByPosicao(String posicao) {
+        return this.jogador1Repository.findByPosicaoIgnoreCase(posicao);
+    }
     
     
     
